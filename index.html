@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote of the Day</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Quote of the Day</h1>
+      <p>A daily spark of inspiration and wisdom</p>
+    </header>
+
+    <main>
+      <article id="quote-card" aria-live="polite">
+        <blockquote id="quote-text">Loading inspiration...</blockquote>
+        <cite id="quote-author">—</cite>
+
+        <div class="controls">
+          <button id="favorite-btn" class="btn btn-favorite" type="button" aria-pressed="false" aria-label="Toggle favorite status">
+            <span id="favorite-icon" class="favorite-icon" aria-hidden="true">♡</span> Favorite
+          </button>
+          <button id="new-quote-btn" class="btn btn-primary" type="button" aria-label="Get a new quote">
+            New quote
+          </button>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+:root {
+  --bg-primary: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --favorite-color: #ef4444;
+  --favorite-bg: rgba(239, 68, 68, 0.15);
+  --border-color: #334155;
+  --radius: 16px;
+  --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+#quote-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+#quote-text {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--text-main);
+  font-style: italic;
+  position: relative;
+  quotes: "“" "”";
+}
+
+#quote-text::before {
+  content: open-quote;
+  font-size: 2.5rem;
+  line-height: 0;
+  margin-right: 0.25rem;
+  vertical-align: -0.4rem;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+#quote-text::after {
+  content: close-quote;
+  font-size: 2.5rem;
+  line-height: 0;
+  margin-left: 0.25rem;
+  vertical-align: -0.4rem;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+#quote-author {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+  font-style: normal;
+  text-align: right;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #0f172a;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-favorite {
+  background-color: transparent;
+  color: var(--text-muted);
+  border-color: var(--border-color);
+}
+
+.btn-favorite:hover {
+  color: var(--favorite-color);
+  border-color: var(--favorite-color);
+  background-color: var(--favorite-bg);
+}
+
+.btn-favorite.is-favorited {
+  color: var(--favorite-color);
+  background-color: var(--favorite-bg);
+  border-color: var(--favorite-color);
+}
+
+.btn-favorite .favorite-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.btn-favorite.is-favorited .favorite-icon {
+  transform: scale(1.15);
+}
+
+@media (max-width: 640px) {
+  #quote-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  #quote-text {
+    font-size: 1.15rem;
+  }
+
+  .controls {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

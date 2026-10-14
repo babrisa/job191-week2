@@ -1,0 +1,9 @@
+{
+  "name": "quote-of-the-day",
+  "version": "1.0.0",
+  "description": "Quote of the Day page with random selection and persistent favorites",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/**/*.test.js"
+  }
+}
